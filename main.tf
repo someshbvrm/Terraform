@@ -21,7 +21,7 @@ resource "aws_instance" "app_server" {
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.private_subnets[0]
   tags = {
-    #  Name = "learn-terraform"
+    #  Name = "Instance1"
     Name = var.instance_name
   }
 }
