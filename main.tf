@@ -14,7 +14,7 @@ data "aws_ami" "ubuntu" {
 }
 
 
-resource "aws_instance" "app_server1" {
+resource "aws_instance" "app_server3" {
   ami = data.aws_ami.ubuntu.id
   # instance_type = "t2.micro"
   instance_type          = var.instance_type
@@ -25,7 +25,7 @@ resource "aws_instance" "app_server1" {
     Name = var.instance_name
   }
 }
-/*resource "aws_instance" "app_server2 " {
+/*resource "aws_instance" "app_server4 " {
   ami = data.aws_ami.ubuntu.id
   # instance_type = "t2.micro"
   instance_type          = var.instance_type
