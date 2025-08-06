@@ -14,7 +14,7 @@ data "aws_ami" "ubuntu" {
 }
 
 
-resource "aws_instance" "app_server" {
+resource "aws_instance" "app_server1" {
   ami = data.aws_ami.ubuntu.id
   # instance_type = "t2.micro"
   instance_type          = var.instance_type
@@ -25,17 +25,18 @@ resource "aws_instance" "app_server" {
     Name = var.instance_name
   }
 }
-resource "aws_instance" "app_server3" {
+/*resource "aws_instance" "app_server2 " {
   ami = data.aws_ami.ubuntu.id
   # instance_type = "t2.micro"
   instance_type          = var.instance_type
   vpc_security_group_ids = [module.vpc.default_security_group_id]
   subnet_id              = module.vpc.private_subnets[0]
   tags = {
-    #  Name = "Instance3"
-    Name = var.instance_name
+    #  Name = "Instance2"
+    Name = var.instance_name2
   }
 }
+*/
 module "vpc" {
   source  = "terraform-aws-modules/vpc/aws"
   version = "5.19.0"
